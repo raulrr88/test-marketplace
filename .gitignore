@@ -1,0 +1,13 @@
+# Yarn/NPM
+/node_modules
+
+# Build
+/dist
+
+# Test
+/coverage
+
+# Misc
+.DS_Store
+.env
+.log
