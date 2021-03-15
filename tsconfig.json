@@ -7,7 +7,7 @@
     ],
     "allowJs": true,
     "outDir": "./dist",
-    "rootDir": "./",
+    "rootDir": "./src",
     "removeComments": true,
     "strict": true,
     "typeRoots": [
@@ -19,6 +19,9 @@
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "forceConsistentCasingInFileNames": true,
+  },
+  "exclude": [
+    "**/*.js"
+  ]
 }
