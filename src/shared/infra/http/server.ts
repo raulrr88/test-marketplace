@@ -1,1 +1,1 @@
-console.log('Hello Marketplace!')
+console.log('Hello Marketplace!');
