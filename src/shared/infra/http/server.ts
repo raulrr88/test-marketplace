@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { ApolloServer, gql } from 'apollo-server';
 import dotenv from 'dotenv';
 
