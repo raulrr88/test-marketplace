@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 import { ApolloServer, gql } from 'apollo-server';
 import dotenv from 'dotenv';
+import 'reflect-metadata';
+import '../typeorm';
 
 dotenv.config();
 const PORT = process.env.PORT || 4100;

@@ -8,13 +8,17 @@
     "build": "tsc",
     "start": "node dist/shared/infra/http/server.js",
     "dev:server": "ts-node-dev --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --fix"
   },
   "dependencies": {
     "apollo-server": "^2.21.1",
     "dotenv": "^8.2.0",
     "graphql": "^15.5.0",
+    "pg": "^8.5.1",
+    "reflect-metadata": "^0.1.13",
     "ts-node-dev": "^1.1.6",
+    "typeorm": "^0.2.31",
     "typescript": "^4.2.3"
   },
   "devDependencies": {
