@@ -32,7 +32,12 @@ or
 
 ----
 ### PS: Don't forget to create `.env` file in the root folder and to paste all environment variables.
-
+Template
+```
+PORT=4000
+NODE_ENV=development
+DATABASE_URL=
+```
 ----
 ### LOCAL:
 Access application running on Heroku:
