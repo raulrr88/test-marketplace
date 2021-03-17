@@ -9,7 +9,7 @@ class ListStoresService {
     private storesRepository: IStoresRespository,
   ) {}
 
-  public async excecute(): Promise<Store[]> {
+  public async execute(): Promise<Store[]> {
     return this.storesRepository.getAll();
   }
 }

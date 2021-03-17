@@ -2,13 +2,13 @@ import { gql } from 'apollo-server';
 
 const store = gql`
   type Store {
-    id: ID
-    name: String
-    feePercentage: Int
-    # products: Product[]
+    id: ID!
+    name: String!
+    feePercentage: Int!
+    # products: [Product]
     # purchases: Purchase[]
-    createdAt: Float
-    updatedAt: Float
+    createdAt: Float!
+    updatedAt: Float!
   }
 
   input StoreInput {
@@ -18,6 +18,7 @@ const store = gql`
   }
 
   type Query {
+    store(id: ID): Store
     stores: [Store]
   }
 

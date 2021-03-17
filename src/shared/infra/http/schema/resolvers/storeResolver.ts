@@ -1,29 +1,21 @@
 import StoresController from '../../../../../modules/stores/infra/http/controllers/StoresController';
+import Store from '../../../../../modules/stores/infra/typeorm/entities/Store';
 
 interface StoreInput {
-  store: {
-    id: string;
-    name: string;
-    feePercentage: number;
-  };
-}
-
-interface Store {
-  id: string;
-  name: string;
-  feePercentage: number;
+  store: Store;
 }
 
 const storeController = new StoresController();
 
 const storeResolver = {
   Query: {
-    stores: async (): Promise<Store[]> => storeController.list(),
+    store: (_: null, id: string): Promise<Store> => storeController.get(id),
+    stores: (): Promise<Store[]> => storeController.list(),
   },
   Mutation: {
-    addStore: async (_: null, input: Omit<StoreInput, 'id'>): Promise<Store> =>
+    addStore: (_: null, input: StoreInput): Promise<Store> =>
       storeController.create(input),
-    updateStore: async (_: null, input: StoreInput): Promise<Store> =>
+    updateStore: (_: null, input: StoreInput): Promise<Store> =>
       storeController.update(input),
   },
 };
