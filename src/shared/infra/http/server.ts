@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
-import { ApolloServer, gql } from 'apollo-server';
+import { ApolloServer } from 'apollo-server';
 import dotenv from 'dotenv';
 import 'reflect-metadata';
+import '../../container';
 import '../typeorm';
 import schema from './schema';
 
@@ -15,6 +16,10 @@ const server = new ApolloServer({
   playground: !IS_PRODUCTION,
   introspection: !IS_PRODUCTION,
   tracing: !IS_PRODUCTION,
+  formatError: error => {
+    console.error(error);
+    return error;
+  },
 });
 
 server.listen(PORT).then(({ url }) => {
