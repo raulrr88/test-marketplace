@@ -10,22 +10,22 @@ interface StoreInput {
 }
 
 class StoresController {
-  public async create({ store }: Omit<StoreInput, 'id'>): Promise<Store> {
+  public create({ store }: Omit<StoreInput, 'id'>): Promise<Store> {
     const createStore = container.resolve(CreateStoreService);
     return createStore.execute(store);
   }
 
-  public async update({ store }: StoreInput): Promise<Store> {
+  public update({ store }: StoreInput): Promise<Store> {
     const updateStore = container.resolve(UpdateStoreService);
     return updateStore.execute(store);
   }
 
-  public async list(): Promise<Store[]> {
+  public list(): Promise<Store[]> {
     const listStore = container.resolve(ListStoresService);
     return listStore.execute();
   }
 
-  public async get(id: string): Promise<Store> {
+  public get(id: string): Promise<Store> {
     const getStore = container.resolve(GetStoreService);
     return getStore.execute(id);
   }

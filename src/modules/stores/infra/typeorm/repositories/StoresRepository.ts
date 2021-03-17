@@ -41,7 +41,7 @@ class StoresRepository implements IStoresRespository {
     return !!affected;
   }
 
-  findById(id: string): Promise<Store | undefined> {
+  public findById(id: string): Promise<Store | undefined> {
     return this.ormRepository.findOne(id);
   }
 
