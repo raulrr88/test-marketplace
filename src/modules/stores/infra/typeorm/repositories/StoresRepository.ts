@@ -13,7 +13,7 @@ class StoresRepository implements IStoresRespository {
   public async create({
     name,
     feePercentage,
-  }: ICreateStoreDTO): Promise<Store> {
+  }: Omit<ICreateStoreDTO, 'id'>): Promise<Store> {
     const newStore = this.ormRepository.create({
       name,
       feePercentage,
@@ -27,6 +27,26 @@ class StoresRepository implements IStoresRespository {
 
   public async findByName(name: string): Promise<Store | undefined> {
     return this.ormRepository.findOne({ where: { name } });
+  }
+
+  public async update({
+    id,
+    name,
+    feePercentage,
+  }: ICreateStoreDTO): Promise<boolean> {
+    const { affected } = await this.ormRepository.update(id, {
+      name,
+      feePercentage,
+    });
+    return !!affected;
+  }
+
+  findById(id: string): Promise<Store | undefined> {
+    return this.ormRepository.findOne(id);
+  }
+
+  public async getAll(): Promise<Store[]> {
+    return this.ormRepository.find();
   }
 }
 

@@ -12,8 +12,9 @@ const store = gql`
   }
 
   input StoreInput {
-    name: String
-    feePercentage: Int
+    id: String
+    name: String!
+    feePercentage: Int = 90
   }
 
   type Query {
@@ -21,7 +22,8 @@ const store = gql`
   }
 
   type Mutation {
-    store(store: StoreInput): Store
+    addStore(store: StoreInput): Store
+    updateStore(store: StoreInput): Store
   }
 `;
 

@@ -15,7 +15,7 @@ const server = new ApolloServer({
   schema,
   playground: !IS_PRODUCTION,
   introspection: !IS_PRODUCTION,
-  tracing: !IS_PRODUCTION,
+  tracing: false,
   formatError: error => {
     console.error(error);
     return error;

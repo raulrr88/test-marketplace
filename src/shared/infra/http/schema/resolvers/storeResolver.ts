@@ -2,6 +2,7 @@ import StoresController from '../../../../../modules/stores/infra/http/controlle
 
 interface StoreInput {
   store: {
+    id: string;
     name: string;
     feePercentage: number;
   };
@@ -16,9 +17,14 @@ interface Store {
 const storeController = new StoresController();
 
 const storeResolver = {
+  Query: {
+    stores: async (): Promise<Store[]> => storeController.list(),
+  },
   Mutation: {
-    store: async (_: null, input: StoreInput): Promise<Store> =>
+    addStore: async (_: null, input: Omit<StoreInput, 'id'>): Promise<Store> =>
       storeController.create(input),
+    updateStore: async (_: null, input: StoreInput): Promise<Store> =>
+      storeController.update(input),
   },
 };
 
