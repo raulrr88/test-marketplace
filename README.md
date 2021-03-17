@@ -16,6 +16,14 @@ Click on Insomnia button to import all requests and tests to run in your machine
 ```
 docker run --name test-marketplace -e POSTGRES_PASSWORD=[PASSWORD] -p 5432:5432 -d postgres
 ```
+#### List containers/apps running:
+```
+docker ps
+```
+#### Start DB on Docker ( if not running ):
+```
+docker start test-marketplace
+```
 ----
 #### Install DBeaver to manage DB:
 - https://dbeaver.io/download/

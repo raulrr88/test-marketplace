@@ -1,32 +1,32 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2021-03-15T02:15:25.512Z",
+  "__export_date": "2021-03-17T22:39:23.506Z",
   "__export_source": "insomnia.desktop.app:v2021.1.1",
   "resources": [
     {
-      "_id": "req_9811201f2ad04524a191efcd082b5b04",
-      "parentId": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
-      "modified": 1615774458277,
-      "created": 1615774206249,
+      "_id": "req_4d0bfc0fbbfc4560a5c1a0f043b68696",
+      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "modified": 1616020312881,
+      "created": 1615999706136,
       "url": "{{ _.base_url }}",
-      "name": "Hello Marketplace",
+      "name": "Add Product",
       "description": "",
       "method": "POST",
       "body": {
         "mimeType": "application/graphql",
-        "text": "{\"query\":\"{\\n  helloMarketplace\\n}\\n\"}"
+        "text": "{\"query\":\"mutation {\\n  addProduct(product: {\\n    name: \\\"TestProduct3\\\",\\n    price: 10.40,\\n    storeId: \\\"d2bad919-ce57-44ec-baab-077428b9e7bc\\\"\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
       },
       "parameters": [],
       "headers": [
         {
           "name": "Content-Type",
           "value": "application/json",
-          "id": "pair_40d30d717cc5410387ff484dc5f3e742"
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
         }
       ],
       "authentication": {},
-      "metaSortKey": -1615774206249,
+      "metaSortKey": -1615999706136,
       "isPrivate": false,
       "settingStoreCookies": true,
       "settingSendCookies": true,
@@ -37,6 +37,18 @@
       "_type": "request"
     },
     {
+      "_id": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "parentId": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
+      "modified": 1615996785717,
+      "created": 1615996785717,
+      "name": "Product",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1615996785717,
+      "_type": "request_group"
+    },
+    {
       "_id": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
       "parentId": null,
       "modified": 1615774163714,
@@ -45,6 +57,274 @@
       "description": "",
       "scope": "designer",
       "_type": "workspace"
+    },
+    {
+      "_id": "req_94079158dd734a52bf6d519a72454c6d",
+      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "modified": 1616020710776,
+      "created": 1616002918752,
+      "url": "{{ _.base_url }}",
+      "name": "List Products",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"{\\n  products {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615974308126.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f585d078d6c8400dbc5cd2090cdbc4dd",
+      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "modified": 1616020056410,
+      "created": 1616004735142,
+      "url": "{{ _.base_url }}",
+      "name": "Get a Product",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"{\\n  product(id: \\\"f57c2f63-5cbe-4dab-af9e-526263b775ac\\\") {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615961609121.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_94f096dc42154f18a17690721a4e7a40",
+      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "modified": 1616020473482,
+      "created": 1616020068078,
+      "url": "{{ _.base_url }}",
+      "name": "Update Product",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  updateProduct(product: {\\n    id: \\\"f8a03c98-28ba-4373-aa5f-659fe05c2c39\\\",\\n    name: \\\"TestProduct666\\\",\\n    price: 666.66,\\n    storeId: \\\"d2bad919-ce57-44ec-baab-077428b9e7bc\\\"\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615958434370.5625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_a00fd114834946c6bf0e9eb2bd145b96",
+      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "modified": 1616020739445,
+      "created": 1616020467663,
+      "url": "{{ _.base_url }}",
+      "name": "Delete a Product",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  deleteProduct(id: \\\"5c287733-345b-4786-b730-9ed4bda68388\\\")\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615955259619.375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_9811201f2ad04524a191efcd082b5b04",
+      "parentId": "fld_a93a1bed38694a2986e64491f49dc1fb",
+      "modified": 1616017915021,
+      "created": 1615774206249,
+      "url": "{{ _.base_url }}",
+      "name": "Add Store",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  addStore(store: {name: \\\"TestingStore88\\\", feePercentage: 95}) {\\n    id\\n    name\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_40d30d717cc5410387ff484dc5f3e742"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615948910117,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_a93a1bed38694a2986e64491f49dc1fb",
+      "parentId": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
+      "modified": 1615948915924,
+      "created": 1615948915924,
+      "name": "Store",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1615948915924,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_c8995f63076e468e8c1dfcd977d4cd87",
+      "parentId": "fld_a93a1bed38694a2986e64491f49dc1fb",
+      "modified": 1616000875357,
+      "created": 1615996898812,
+      "url": "{{ _.base_url }}",
+      "name": "Get a Store",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"{\\n  store(id: \\\"d2bad919-ce57-44ec-baab-077428b9e7bc\\\") {\\n    id\\n    name\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_b52ddd0d986f4824a0b791d95134baf9"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615902331219.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8b74c04e3354446296df42d28edc3cea",
+      "parentId": "fld_a93a1bed38694a2986e64491f49dc1fb",
+      "modified": 1616020257650,
+      "created": 1615949685292,
+      "url": "{{ _.base_url }}",
+      "name": "List Stores",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"{\\n  stores {\\n    id\\n    name\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_40ca0ffb9dfd4686b185af4586a65fa4"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615855752372,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_0a105eddd7f74e9384ffe3bacd58e82d",
+      "parentId": "fld_a93a1bed38694a2986e64491f49dc1fb",
+      "modified": 1615997462244,
+      "created": 1615948910067,
+      "url": "{{ _.base_url }}",
+      "name": "Update Store",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  updateStore(store: {\\n    id: \\\"d2bad919-ce57-44ec-baab-077428b9e7bc\\\", name: \\\"TestingStoreNEW\\\", feePercentage: 10\\n  }) {\\n    id\\n    name\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_40ca0ffb9dfd4686b185af4586a65fa4"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615855752322,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
     },
     {
       "_id": "env_5b2006f048b96bf6d17ffc050190e18e14974c20",
@@ -103,6 +383,25 @@
       "color": null,
       "isPrivate": false,
       "metaSortKey": 1615774265632,
+      "_type": "environment"
+    },
+    {
+      "_id": "env_6696f1780f154b239273a997a3461532",
+      "parentId": "env_5b2006f048b96bf6d17ffc050190e18e14974c20",
+      "modified": 1615827157245,
+      "created": 1615827118603,
+      "name": "Test",
+      "data": {
+        "base_url": "https://app-test-marketplace.herokuapp.com"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1615827118603,
       "_type": "environment"
     },
     {

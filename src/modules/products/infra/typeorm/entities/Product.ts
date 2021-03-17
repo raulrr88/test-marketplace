@@ -18,7 +18,7 @@ class Product {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ type: 'float' })
   price: number;
 
   @OneToMany(() => Purchase, purchase => purchase.product)

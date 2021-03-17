@@ -17,12 +17,12 @@ const store = gql`
     feePercentage: Int = 90
   }
 
-  type Query {
+  extend type Query {
     store(id: ID): Store
     stores: [Store]
   }
 
-  type Mutation {
+  extend type Mutation {
     addStore(store: StoreInput): Store
     updateStore(store: StoreInput): Store
   }
