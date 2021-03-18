@@ -5,7 +5,7 @@ const product = gql`
     id: ID!
     name: String!
     price: Float!
-    # purchases: [Purchase]
+    purchases: [Purchase]
     store: Store
     createdAt: Float!
     updatedAt: Float!

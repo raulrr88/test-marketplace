@@ -3,15 +3,15 @@ import Product from '../infra/typeorm/entities/Product';
 import IProductsRepository from '../repositories/IProductsRepository';
 
 @singleton()
-class ListProductsService {
+class ListStoreProductsService {
   constructor(
     @inject('ProductsRepository')
     private productsRepository: IProductsRepository,
   ) {}
 
-  public execute(): Promise<Product[]> {
-    return this.productsRepository.getAll();
+  public execute(storeId: string): Promise<Product[]> {
+    return this.productsRepository.getStoreProducs(storeId);
   }
 }
 
-export default ListProductsService;
+export default ListStoreProductsService;

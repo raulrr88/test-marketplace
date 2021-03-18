@@ -6,6 +6,7 @@ interface IProductsRepository {
   update(data: ICreateProductDTO): Promise<boolean>;
   save(product: Product): Promise<Product>;
   getAll(): Promise<Product[]>;
+  getStoreProducs(storeId: string): Promise<Product[]>;
   findById(id: string): Promise<Product | undefined>;
   delete(id: string): Promise<boolean>;
 }

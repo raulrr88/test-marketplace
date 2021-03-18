@@ -3,6 +3,7 @@ import CreateProductService from '../../../services/CreateProductService';
 import DeleteProductService from '../../../services/DeleteProductService';
 import GetProductService from '../../../services/GetProductService';
 import ListProductsService from '../../../services/ListProductsService';
+import ListStoreProductsService from '../../../services/ListStoreProductsService';
 import UpdateProductService from '../../../services/UpdateProductService';
 import Product from '../../typeorm/entities/Product';
 
@@ -29,6 +30,11 @@ class ProductsController {
   public list(): Promise<Product[]> {
     const listProducts = container.resolve(ListProductsService);
     return listProducts.execute();
+  }
+
+  public listStoreProducts(storeId: string): Promise<Product[]> {
+    const listStoreProducts = container.resolve(ListStoreProductsService);
+    return listStoreProducts.execute(storeId);
   }
 
   public update({ product }: ProductInput): Promise<Product> {
