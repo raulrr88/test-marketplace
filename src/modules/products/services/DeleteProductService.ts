@@ -1,4 +1,4 @@
-import { UserInputError } from 'apollo-server-errors';
+import { UserInputError } from 'apollo-server';
 import { inject, singleton } from 'tsyringe';
 import IProductsRepository from '../repositories/IProductsRepository';
 

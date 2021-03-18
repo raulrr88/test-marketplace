@@ -1,4 +1,4 @@
-import { UserInputError } from 'apollo-server-errors';
+import { UserInputError } from 'apollo-server';
 import { container } from 'tsyringe';
 import { getRepository, Repository } from 'typeorm';
 import GetStoreService from '../../../../stores/services/GetStoreService';

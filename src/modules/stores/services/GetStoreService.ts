@@ -1,4 +1,4 @@
-import { UserInputError } from 'apollo-server-errors';
+import { UserInputError } from 'apollo-server';
 import { inject, singleton } from 'tsyringe';
 import Store from '../infra/typeorm/entities/Store';
 import IStoresRespository from '../repositories/IStoresRepository';
