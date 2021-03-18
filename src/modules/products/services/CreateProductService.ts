@@ -10,7 +10,7 @@ class CreateProductService {
     private productsRepository: IProductsRepository,
   ) {}
 
-  public async execute(data: Omit<ICreateProductDTO, 'id'>): Promise<Product> {
+  public execute(data: Omit<ICreateProductDTO, 'id'>): Promise<Product> {
     return this.productsRepository.create(data);
   }
 }
