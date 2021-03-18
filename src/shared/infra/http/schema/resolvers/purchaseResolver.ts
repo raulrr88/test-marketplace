@@ -24,8 +24,8 @@ const purchaseResolver = {
   Purchase: {
     store: (purchase: Purchase): Promise<Store> =>
       storeController.get(purchase.store?.id),
-    product: (product: Product): Promise<Product> =>
-      productController.get(product.store?.id),
+    product: (purchase: Purchase): Promise<Product> =>
+      productController.get(purchase.store?.id),
   },
   Query: {
     purchase: (_: null, id: string): Promise<Purchase> =>
