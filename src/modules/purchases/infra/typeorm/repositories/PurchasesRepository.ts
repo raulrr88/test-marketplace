@@ -1,6 +1,8 @@
+import { container } from 'tsyringe';
 import { getRepository, Repository } from 'typeorm';
-import IPurchasesRepository from '../../../repositories/IPurchasesRepository';
+import GetProductService from '../../../../products/services/GetProductService';
 import ICreatePurchaseDTO from '../../../dtos/ICreatePurchaseDTO';
+import IPurchasesRepository from '../../../repositories/IPurchasesRepository';
 import Purchase from '../entities/Purchase';
 
 class PurchasesRepository implements IPurchasesRepository {
@@ -10,8 +12,20 @@ class PurchasesRepository implements IPurchasesRepository {
     this.ormRepository = getRepository(Purchase);
   }
 
-  public create(input: Omit<ICreatePurchaseDTO, 'id'>): Promise<Purchase> {
-    const purchase = this.ormRepository.create(input);
+  public async create({
+    productId,
+    marketplaceFee,
+    storeFee,
+    paymentPlatformFee,
+  }: Omit<ICreatePurchaseDTO, 'id'>): Promise<Purchase> {
+    const getProduct = container.resolve(GetProductService);
+    const product = await getProduct.execute(productId);
+    const purchase = this.ormRepository.create({
+      product,
+      marketplaceFee,
+      storeFee,
+      paymentPlatformFee,
+    });
     return this.save(purchase);
   }
 
@@ -25,6 +39,10 @@ class PurchasesRepository implements IPurchasesRepository {
 
   public list(): Promise<Purchase[]> {
     return this.ormRepository.find();
+  }
+
+  public listStorePurchases(storeId: string): Promise<Purchase[]> {
+    return this.ormRepository.find({ where: { store: { id: storeId } } });
   }
 }
 

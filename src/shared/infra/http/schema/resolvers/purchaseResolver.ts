@@ -9,7 +9,6 @@ interface PurchaseInput {
   purchase: {
     id: string;
     productId: string;
-    storeId: string;
     marketplaceFee: number;
     storeFee: number;
     paymentPlatformFee: number;
@@ -17,15 +16,11 @@ interface PurchaseInput {
 }
 
 const purchaseController = new PurchasesController();
-const storeController = new StoresController();
-const productController = new ProductsController();
 
 const purchaseResolver = {
   Purchase: {
-    store: (purchase: Purchase): Promise<Store> =>
-      storeController.get(purchase.store?.id),
-    product: (purchase: Purchase): Promise<Product> =>
-      productController.get(purchase.store?.id),
+    // product: (purchase: Purchase): Promise<Product> =>
+    //   productController.get(),
   },
   Query: {
     purchase: (_: null, id: string): Promise<Purchase> =>

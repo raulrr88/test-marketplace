@@ -4,7 +4,6 @@ const purchase = gql`
   type Purchase {
     id: ID!
     product: Product!
-    store: Store!
     marketplaceFee: Int!
     storeFee: Int!
     paymentPlatformFee: Int!
@@ -15,7 +14,6 @@ const purchase = gql`
   input PurchaseInput {
     id: ID
     productId: String!
-    storeId: String!
     marketplaceFee: Int!
     storeFee: Int!
     paymentPlatformFee: Int!

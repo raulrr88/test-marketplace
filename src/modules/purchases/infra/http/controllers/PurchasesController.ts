@@ -2,13 +2,13 @@ import { container } from 'tsyringe';
 import CreatePurchaseService from '../../../services/CreatePurchaseService';
 import GetPurchaseService from '../../../services/GetPurchaseService';
 import ListPurchasesService from '../../../services/ListPurchasesService';
+import ListStorePurchasesService from '../../../services/ListStorePurchasesService';
 import Purchase from '../../typeorm/entities/Purchase';
 
 interface PurchaseInput {
   purchase: {
     id: string;
     productId: string;
-    storeId: string;
     marketplaceFee: number;
     storeFee: number;
     paymentPlatformFee: number;
@@ -29,6 +29,11 @@ class PurchasesController {
   public list(): Promise<Purchase[]> {
     const listPurchases = container.resolve(ListPurchasesService);
     return listPurchases.execute();
+  }
+
+  public listStorePurchases(storeId: string): Promise<Purchase[]> {
+    const listStorePurchases = container.resolve(ListStorePurchasesService);
+    return listStorePurchases.execute(storeId);
   }
 }
 

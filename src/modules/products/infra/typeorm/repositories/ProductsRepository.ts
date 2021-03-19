@@ -58,7 +58,7 @@ class ProductsRepository implements IProductsRepository {
     return this.ormRepository.find();
   }
 
-  public getStoreProducs(storeId: string): Promise<Product[]> {
+  public getStoreProducts(storeId: string): Promise<Product[]> {
     return this.ormRepository.find({ where: { store: { id: storeId } } });
   }
 

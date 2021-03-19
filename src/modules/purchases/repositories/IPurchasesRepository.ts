@@ -6,6 +6,7 @@ interface IPurchasesRepository {
   save(purchase: Purchase): Promise<Purchase>;
   get(id: string): Promise<Purchase | undefined>;
   list(): Promise<Purchase[]>;
+  listStorePurchases(storeId: string): Promise<Purchase[]>;
 }
 
 export default IPurchasesRepository;

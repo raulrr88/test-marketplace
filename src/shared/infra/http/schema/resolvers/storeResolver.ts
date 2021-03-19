@@ -17,7 +17,8 @@ const storeResolver = {
   Store: {
     products: (store: Store): Promise<Product[]> =>
       productsController.listStoreProducts(store.id),
-    purchases: (): Promise<Purchase[]> => purchasesController.list(),
+    purchases: (store: Store): Promise<Purchase[]> =>
+      purchasesController.listStorePurchases(store.id),
   },
   Query: {
     store: (_: null, id: string): Promise<Store> => storeController.get(id),
