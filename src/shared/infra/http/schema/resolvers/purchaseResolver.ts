@@ -3,10 +3,7 @@ import PurchasesController from '../../../../../modules/purchases/infra/http/con
 import Purchase from '../../../../../modules/purchases/infra/typeorm/entities/Purchase';
 
 interface PurchaseInput {
-  purchase: {
-    id: string;
-    productId: string;
-  };
+  productId: string;
 }
 
 const purchaseController = new PurchasesController();
@@ -22,10 +19,8 @@ const purchaseResolver = {
     purchases: (): Promise<Purchase[]> => purchaseController.list(),
   },
   Mutation: {
-    addPurchase: (
-      _: null,
-      input: Omit<PurchaseInput, 'id'>,
-    ): Promise<Purchase> => purchaseController.create(input),
+    addPurchase: (_: null, { productId }: PurchaseInput): Promise<Purchase> =>
+      purchaseController.create(productId),
   },
 };
 

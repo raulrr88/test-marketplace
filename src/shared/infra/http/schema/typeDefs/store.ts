@@ -4,7 +4,7 @@ const store = gql`
   type Store {
     id: ID!
     name: String!
-    feePercentage: Int!
+    feePercentage: Float!
     products: [Product]
     purchases: [Purchase]
     createdAt: Float!

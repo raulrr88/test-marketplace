@@ -7,17 +7,10 @@ import ListPurchasesService from '../../../services/ListPurchasesService';
 import ListStorePurchasesService from '../../../services/ListStorePurchasesService';
 import Purchase from '../../typeorm/entities/Purchase';
 
-interface PurchaseInput {
-  purchase: {
-    id: string;
-    productId: string;
-  };
-}
-
 class PurchasesController {
-  public create({ purchase }: PurchaseInput): Promise<Purchase> {
+  public create(productId: string): Promise<Purchase> {
     const createPurchase = container.resolve(CreatePurchaseService);
-    return createPurchase.execute(purchase);
+    return createPurchase.execute(productId);
   }
 
   public get(id: string): Promise<Purchase> {

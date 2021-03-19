@@ -14,22 +14,8 @@ class PurchasesRepository implements IPurchasesRepository {
     this.ormRepository = getRepository(Purchase);
   }
 
-  public async create({
-    productId,
-  }: Omit<ICreatePurchaseDTO, 'id'>): Promise<Purchase> {
-    const getProduct = container.resolve(GetProductService);
-    const getStore = container.resolve(GetProductStoreService);
-    const product = await getProduct.execute(productId);
-    const store = await getStore.execute(productId);
-    // TODO:  Calculate fee and update model
-    // ADD TOTAL, Percentages and Values
-    const purchase = this.ormRepository.create({
-      store,
-      product,
-      marketplaceFee: 10,
-      storeFee: 10,
-      paymentPlatformFee: 10,
-    });
+  public async create(data: ICreatePurchaseDTO): Promise<Purchase> {
+    const purchase = this.ormRepository.create(data);
     return this.save(purchase);
   }
 

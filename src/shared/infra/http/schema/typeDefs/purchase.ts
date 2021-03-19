@@ -4,16 +4,15 @@ const purchase = gql`
   type Purchase {
     id: ID!
     product: Product!
-    marketplaceFee: Int!
-    storeFee: Int!
-    paymentPlatformFee: Int!
+    total: Float!
+    marketplacePercentage: Float!
+    marketplaceValue: Float!
+    storePercentage: Float!
+    storeValue: Float!
+    paymentPlatformPercentage: Float!
+    paymentPlatformValue: Float!
     createdAt: Float!
     updatedAt: Float!
-  }
-
-  input PurchaseInput {
-    id: ID
-    productId: String!
   }
 
   extend type Query {
@@ -22,7 +21,7 @@ const purchase = gql`
   }
 
   extend type Mutation {
-    addPurchase(purchase: PurchaseInput): Purchase
+    addPurchase(productId: String!): Purchase
   }
 `;
 

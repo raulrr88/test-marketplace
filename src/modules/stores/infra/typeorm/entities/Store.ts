@@ -17,7 +17,7 @@ class Store {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ type: 'float' })
   feePercentage: number;
 
   @OneToMany(() => Product, product => product.store)

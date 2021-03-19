@@ -20,14 +20,26 @@ class Purchase {
   @ManyToOne(() => Store, store => store.purchases)
   store: Store;
 
-  @Column()
-  marketplaceFee: number;
+  @Column({ type: 'float' })
+  total: number;
 
-  @Column()
-  storeFee: number;
+  @Column({ type: 'float' })
+  marketplacePercentage: number;
 
-  @Column()
-  paymentPlatformFee: number;
+  @Column({ type: 'float' })
+  marketplaceValue: number;
+
+  @Column({ type: 'float' })
+  storePercentage: number;
+
+  @Column({ type: 'float' })
+  storeValue: number;
+
+  @Column({ type: 'float' })
+  paymentPlatformPercentage: number;
+
+  @Column({ type: 'float' })
+  paymentPlatformValue: number;
 
   @CreateDateColumn()
   createdAt: Date;
