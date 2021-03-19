@@ -17,11 +17,13 @@ class CreatePurchaseService {
   ) {}
 
   public async execute(productId: string): Promise<Purchase> {
-    const productDTO = await this.splitCalc(productId);
+    const productDTO = await this.rateSharingCalc(productId);
     return this.purchaseRepository.create(productDTO);
   }
 
-  private async splitCalc(productId: string): Promise<ICreatePurchaseDTO> {
+  private async rateSharingCalc(
+    productId: string,
+  ): Promise<ICreatePurchaseDTO> {
     const product = await this.productsRepository.findById(productId);
     if (!product) throw new Error('Product not found!');
     const store = await this.productsRepository.getProductStore(productId);
