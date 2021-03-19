@@ -1,7 +1,11 @@
 import { container } from 'tsyringe';
+import Purchase from '../../../../purchases/infra/typeorm/entities/Purchase';
+import Store from '../../../../stores/infra/typeorm/entities/Store';
 import CreateProductService from '../../../services/CreateProductService';
 import DeleteProductService from '../../../services/DeleteProductService';
+import GetProductPurchasesService from '../../../services/GetProductPurchasesService';
 import GetProductService from '../../../services/GetProductService';
+import GetProductStoreService from '../../../services/GetProductStoreService';
 import ListProductsService from '../../../services/ListProductsService';
 import ListStoreProductsService from '../../../services/ListStoreProductsService';
 import UpdateProductService from '../../../services/UpdateProductService';
@@ -25,6 +29,16 @@ class ProductsController {
   public get(id: string): Promise<Product> {
     const getProduct = container.resolve(GetProductService);
     return getProduct.execute(id);
+  }
+
+  public getProductPurchases(id: string): Promise<Purchase[]> {
+    const getProductPurchases = container.resolve(GetProductPurchasesService);
+    return getProductPurchases.execute(id);
+  }
+
+  public getProductStore(id: string): Promise<Store> {
+    const getProductStore = container.resolve(GetProductStoreService);
+    return getProductStore.execute(id);
   }
 
   public list(): Promise<Product[]> {

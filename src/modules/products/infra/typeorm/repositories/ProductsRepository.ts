@@ -1,6 +1,8 @@
 import { UserInputError } from 'apollo-server';
 import { container } from 'tsyringe';
 import { getRepository, Repository } from 'typeorm';
+import Purchase from '../../../../purchases/infra/typeorm/entities/Purchase';
+import Store from '../../../../stores/infra/typeorm/entities/Store';
 import GetStoreService from '../../../../stores/services/GetStoreService';
 import ICreateProductDTO from '../../../dtos/ICreateProductDTO';
 import IProductsRepository from '../../../repositories/IProductsRepository';
@@ -52,6 +54,26 @@ class ProductsRepository implements IProductsRepository {
 
   public findById(id: string): Promise<Product | undefined> {
     return this.ormRepository.findOne(id);
+  }
+
+  public async getProductStore(id: string): Promise<Store | undefined> {
+    const product = await this.ormRepository
+      .createQueryBuilder('product')
+      .leftJoinAndSelect('product.store', 'store')
+      .where({ id })
+      .getOne();
+    return product?.store;
+  }
+
+  public async getProductPurchases(
+    id: string,
+  ): Promise<Purchase[] | undefined> {
+    const product = await this.ormRepository
+      .createQueryBuilder('product')
+      .leftJoinAndSelect('product.purchases', 'purchases')
+      .where({ id })
+      .getOne();
+    return product?.purchases;
   }
 
   public getAll(): Promise<Product[]> {

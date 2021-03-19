@@ -14,9 +14,6 @@ const purchase = gql`
   input PurchaseInput {
     id: ID
     productId: String!
-    marketplaceFee: Int!
-    storeFee: Int!
-    paymentPlatformFee: Int!
   }
 
   extend type Query {

@@ -10,7 +10,7 @@ class ListStoreProductsService {
   ) {}
 
   public execute(storeId: string): Promise<Product[]> {
-    return this.productsRepository.getStoreProducs(storeId);
+    return this.productsRepository.getStoreProducts(storeId);
   }
 }
 
