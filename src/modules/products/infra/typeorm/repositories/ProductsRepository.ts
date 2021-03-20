@@ -1,9 +1,6 @@
-import { UserInputError } from 'apollo-server';
-import { container } from 'tsyringe';
 import { getRepository, Repository } from 'typeorm';
 import Purchase from '../../../../purchases/infra/typeorm/entities/Purchase';
 import Store from '../../../../stores/infra/typeorm/entities/Store';
-import GetStoreService from '../../../../stores/services/GetStoreService';
 import ICreateProductDTO from '../../../dtos/ICreateProductDTO';
 import IProductsRepository from '../../../repositories/IProductsRepository';
 import Product from '../entities/Product';
@@ -15,19 +12,8 @@ class ProductsRepository implements IProductsRepository {
     this.ormRepository = getRepository(Product);
   }
 
-  public async create({
-    name,
-    price,
-    storeId,
-  }: Omit<ICreateProductDTO, 'id'>): Promise<Product> {
-    const getStore = container.resolve(GetStoreService);
-    const store = await getStore.execute(storeId);
-    if (!store) throw new UserInputError('Store was not found');
-    const newStore = this.ormRepository.create({
-      name,
-      price,
-      store,
-    });
+  public create(data: Omit<ICreateProductDTO, 'id'>): Promise<Product> {
+    const newStore = this.ormRepository.create(data);
     return this.save(newStore);
   }
 
@@ -39,11 +25,8 @@ class ProductsRepository implements IProductsRepository {
     id,
     name,
     price,
-    storeId,
+    store,
   }: ICreateProductDTO): Promise<boolean> {
-    const getStore = container.resolve(GetStoreService);
-    const store = await getStore.execute(storeId);
-    if (!store) throw new UserInputError('Store was not found');
     const { affected } = await this.ormRepository.update(id, {
       name,
       price,

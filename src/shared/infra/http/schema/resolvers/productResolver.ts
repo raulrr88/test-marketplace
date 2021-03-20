@@ -1,6 +1,5 @@
 import ProductsController from '../../../../../modules/products/infra/http/controllers/ProductsController';
 import Product from '../../../../../modules/products/infra/typeorm/entities/Product';
-import PurchasesController from '../../../../../modules/purchases/infra/http/controllers/PurchasesController';
 import Purchase from '../../../../../modules/purchases/infra/typeorm/entities/Purchase';
 import Store from '../../../../../modules/stores/infra/typeorm/entities/Store';
 
@@ -28,10 +27,12 @@ const productResolver = {
     products: (): Promise<Product[]> => productsController.list(),
   },
   Mutation: {
-    addProduct: (_: null, input: Omit<ProductInput, 'id'>): Promise<Product> =>
-      productsController.create(input),
-    updateProduct: (_: null, input: ProductInput): Promise<Product> =>
-      productsController.update(input),
+    addProduct: (_: null, input: ProductInput): Promise<Product> => {
+      const { name, price, storeId } = input.product;
+      return productsController.create({ name, price, storeId });
+    },
+    updateProduct: (_: null, { product }: ProductInput): Promise<Product> =>
+      productsController.update(product),
     deleteProduct: (_: null, id: string): Promise<string> =>
       productsController.delete(id),
   },

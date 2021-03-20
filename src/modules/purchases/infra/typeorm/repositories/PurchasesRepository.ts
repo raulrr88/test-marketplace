@@ -1,8 +1,5 @@
-import { container } from 'tsyringe';
 import { getRepository, Repository } from 'typeorm';
 import Product from '../../../../products/infra/typeorm/entities/Product';
-import GetProductService from '../../../../products/services/GetProductService';
-import GetProductStoreService from '../../../../products/services/GetProductStoreService';
 import ICreatePurchaseDTO from '../../../dtos/ICreatePurchaseDTO';
 import IPurchasesRepository from '../../../repositories/IPurchasesRepository';
 import Purchase from '../entities/Purchase';

@@ -12,18 +12,16 @@ import UpdateProductService from '../../../services/UpdateProductService';
 import Product from '../../typeorm/entities/Product';
 
 interface ProductInput {
-  product: {
-    id: string;
-    name: string;
-    price: number;
-    storeId: string;
-  };
+  id: string;
+  name: string;
+  price: number;
+  storeId: string;
 }
 
 class ProductsController {
-  public create({ product }: ProductInput): Promise<Product> {
+  public create(data: Omit<ProductInput, 'id'>): Promise<Product> {
     const createProduct = container.resolve(CreateProductService);
-    return createProduct.execute(product);
+    return createProduct.execute(data);
   }
 
   public get(id: string): Promise<Product> {
@@ -51,9 +49,9 @@ class ProductsController {
     return listStoreProducts.execute(storeId);
   }
 
-  public update({ product }: ProductInput): Promise<Product> {
+  public update(data: ProductInput): Promise<Product> {
     const updateProduct = container.resolve(UpdateProductService);
-    return updateProduct.execute(product);
+    return updateProduct.execute(data);
   }
 
   public delete(id: string): Promise<string> {

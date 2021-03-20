@@ -14,10 +14,7 @@ class StoresRepository implements IStoresRespository {
     name,
     feePercentage,
   }: Omit<ICreateStoreDTO, 'id'>): Promise<Store> {
-    const newStore = this.ormRepository.create({
-      name,
-      feePercentage,
-    });
+    const newStore = this.ormRepository.create({ name, feePercentage });
     return this.save(newStore);
   }
 
