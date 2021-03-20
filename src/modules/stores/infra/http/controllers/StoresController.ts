@@ -1,8 +1,8 @@
 import { container } from 'tsyringe';
 import CreateStoreService from '../../../services/CreateStoreService';
-import UpdateStoreService from '../../../services/UpdateStoreService';
-import ListStoresService from '../../../services/ListStoresService';
 import GetStoreService from '../../../services/GetStoreService';
+import ListStoresService from '../../../services/ListStoresService';
+import UpdateStoreService from '../../../services/UpdateStoreService';
 import Store from '../../typeorm/entities/Store';
 
 interface StoreInput {

@@ -4,6 +4,8 @@ import ICreateStoreDTO from '../dtos/ICreateStoreDTO';
 import Store from '../infra/typeorm/entities/Store';
 import IStoresRespository from '../repositories/IStoresRepository';
 
+const MIN = 0;
+const MAX = 99;
 @singleton()
 class CreateStoreService {
   constructor(
@@ -17,7 +19,7 @@ class CreateStoreService {
   }: Omit<ICreateStoreDTO, 'id'>): Promise<Store> {
     const store = await this.storesRepository.findByName(name);
     if (store) throw new UserInputError('This store name has already exists!');
-    if (feePercentage > 99 || feePercentage < 0)
+    if (feePercentage > MAX || feePercentage < MIN)
       throw new UserInputError(
         'Value not allowed, the maximum percentage fee is 99 and minimum is 0',
       );

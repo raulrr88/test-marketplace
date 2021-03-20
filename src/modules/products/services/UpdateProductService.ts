@@ -1,7 +1,6 @@
 import { UserInputError } from 'apollo-server';
 import { inject, singleton } from 'tsyringe';
 import IStoresRespository from '../../stores/repositories/IStoresRepository';
-import ICreateProductDTO from '../dtos/ICreateProductDTO';
 import Product from '../infra/typeorm/entities/Product';
 import IProductsRepository from '../repositories/IProductsRepository';
 

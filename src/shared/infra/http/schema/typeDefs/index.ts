@@ -1,6 +1,6 @@
-import root from './root';
 import product from './product';
-import store from './store';
 import purchase from './purchase';
+import root from './root';
+import store from './store';
 
 export default [root, store, product, purchase];
