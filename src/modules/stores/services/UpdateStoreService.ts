@@ -24,7 +24,11 @@ class UpdateStoreService {
       throw new UserInputError(
         'Value not allowed, the maximum percentage fee is 99 and minimum is 0',
       );
-    const affected = this.storesRepository.update({ id, name, feePercentage });
+    const affected = await this.storesRepository.update({
+      id,
+      name,
+      feePercentage,
+    });
     const newStore = await this.storesRepository.findById(id);
     if (affected && newStore) return newStore;
     throw new Error('Something went wrong, this store was not updated!');
