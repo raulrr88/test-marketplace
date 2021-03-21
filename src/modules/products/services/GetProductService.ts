@@ -1,3 +1,4 @@
+import { UserInputError } from 'apollo-server';
 import { inject, singleton } from 'tsyringe';
 import Product from '../infra/typeorm/entities/Product';
 import IProductsRepository from '../repositories/IProductsRepository';
@@ -12,7 +13,7 @@ class GetProductService {
   public async execute(id: string): Promise<Product> {
     const product = await this.productsRepository.findById(id);
     if (product) return product;
-    throw new Error('Product was not found!');
+    throw new UserInputError('Product was not found!');
   }
 }
 

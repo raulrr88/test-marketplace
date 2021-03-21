@@ -13,8 +13,8 @@ class ProductsRepository implements IProductsRepository {
   }
 
   public create(data: Omit<ICreateProductDTO, 'id'>): Promise<Product> {
-    const newStore = this.ormRepository.create(data);
-    return this.save(newStore);
+    const newProduct = this.ormRepository.create(data);
+    return this.save(newProduct);
   }
 
   public async save(product: Product): Promise<Product> {

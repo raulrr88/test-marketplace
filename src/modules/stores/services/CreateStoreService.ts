@@ -18,7 +18,7 @@ class CreateStoreService {
     feePercentage,
   }: Omit<ICreateStoreDTO, 'id'>): Promise<Store> {
     const store = await this.storesRepository.findByName(name);
-    if (store) throw new UserInputError('This store name has already exists!');
+    if (store) throw new UserInputError('This store name already exists!');
     if (feePercentage > MAX || feePercentage < MIN)
       throw new UserInputError(
         'Value not allowed, the maximum percentage fee is 99 and minimum is 0',
