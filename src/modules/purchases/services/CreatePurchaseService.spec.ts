@@ -40,6 +40,14 @@ describe('CreatePurchase', () => {
     });
     const purchase = await createPurchase.execute(product.id);
     expect(purchase).toHaveProperty('id');
+    // Rate Sharing Calc Validations:
+    expect(purchase.total).toBe(27.8);
+    expect(purchase.marketplacePercentage).toBe(9);
+    expect(purchase.marketplaceValue).toBe(2.5020000000000002);
+    expect(purchase.storePercentage).toBe(90);
+    expect(purchase.storeValue).toBe(25.020000000000003);
+    expect(purchase.paymentPlatformPercentage).toBe(1);
+    expect(purchase.paymentPlatformValue).toBe(0.278);
   });
 
   it('should not create a new purchase without valid store', async () => {
@@ -52,7 +60,6 @@ describe('CreatePurchase', () => {
       price: 27.8,
       storeId: store.id,
     });
-    // TODO: VALIDATE SPLIT
     Object.assign(product, { store: null });
     expect(createPurchase.execute(product.id)).rejects.toBeInstanceOf(Error);
   });
