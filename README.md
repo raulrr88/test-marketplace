@@ -13,7 +13,6 @@
 Click on Insomnia button to import all requests and tests to run in your machine.
 <br>
 
-----
 <br>
 
 ## Tech Stack:
@@ -37,7 +36,6 @@ Click on Insomnia button to import all requests and tests to run in your machine
  - CI: Github Actions
  - CD: Heroku Pipeline
 <br>
-----
 <br>
  ## Architecture and Design Keys:
  - Clean Architecture (Loose coupled and High Cohesion)
@@ -50,7 +48,6 @@ Click on Insomnia button to import all requests and tests to run in your machine
  - Flow with Layers:
  -- Queries --> Resolvers <--> Controllers <--> Services <--> Repositories <--> DB
 <br>
-----
 <br>
 
 ## Data Model
@@ -58,7 +55,6 @@ Click on Insomnia button to import all requests and tests to run in your machine
 <img src="./external_assets/images/datamodel.png" alt="Data Model" width="693" height="588">
 
 <br>
-----
 <br>
 
 ## Backlog
@@ -75,7 +71,6 @@ Click on Insomnia button to import all requests and tests to run in your machine
 - AWS Fargate
 
 <br>
-----
 <br>
 
 ## How to run ( Local and Remote):
@@ -106,7 +101,6 @@ docker ps
 docker start test-marketplace
 ```
 <br>
-----
 
 #### Running project:
 - Install dependencies with `yarn`.
@@ -131,7 +125,6 @@ OR
  - Run `yarn lint`
 
 <br>
-----
 <br>
 
 ### PS: Don't forget to create `.env` file in the root folder and to paste all environment variables.
@@ -147,7 +140,6 @@ DATABASE_URL=
 Use Insomnia to Test all Queries and Flows, by clicking on the button bellow.
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=TEST-Marketplace&uri=https://github.com/raulrr88/test-marketplace/blob/master/Insomnia_test_marketplace.json?token=AB6AVBVOVTL2RH5TCT6QA5DAJ3FLS)
 <br>
-----
 <br>
 
 ### Production on Cloud:
