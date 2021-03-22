@@ -42,7 +42,6 @@ describe('UpdateProduct', () => {
       id: product.id,
       name: 'Product Test 3',
       price: 29.8,
-      storeId: store.id,
     });
 
     expect(updatedProduct).toHaveProperty('id');
@@ -61,7 +60,6 @@ describe('UpdateProduct', () => {
         id: '123456',
         name: 'Product Test 0',
         price: 27.8,
-        storeId: store.id,
       }),
     ).rejects.toBeInstanceOf(UserInputError);
   });
