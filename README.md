@@ -7,7 +7,7 @@
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=TEST-Marketplace&uri=https://github.com/raulrr88/test-marketplace/blob/master/Insomnia_test_marketplace.json?token=AB6AVBVOVTL2RH5TCT6QA5DAJ3FLS)
 
-[![Heroku CI Status](https://app-test-marketplace.herokuapp.com/last.svg)](https://dashboard.heroku.com/pipelines/pipe-test-marketplace/tests)
+<!-- [![Heroku CI Status](https://app-test-marketplace.herokuapp.com/last.svg)](https://dashboard.heroku.com/pipelines/pipe-test-marketplace/tests) -->
 
 <br>
 Click on Insomnia button to import all requests and tests to run in your machine.
@@ -112,10 +112,24 @@ docker start test-marketplace
 - Install dependencies with `yarn`.
 - Run all migrations with `yarn typeorm migration:run`.
 - Start the project with `yarn dev:server` for development.
-or
+<br>
+<br>
+OR
+<br>
+<br>
+
 - Build with `yarn build`.
-- Start the project with `yarn start` for production version.
+- Start the project with `yarn prod:server` for production version.
 - `yarn lint` to check code lint.
+<br>
+
+#### Running tests:
+ - Run `yarn test`
+ - Check execute index.html on `coverage` folder.
+
+#### Running lint:
+ - Run `yarn lint`
+
 <br>
 ----
 <br>
