@@ -1,195 +1,13 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2021-03-17T22:39:23.506Z",
+  "__export_date": "2021-03-22T01:12:39.982Z",
   "__export_source": "insomnia.desktop.app:v2021.1.1",
   "resources": [
     {
-      "_id": "req_4d0bfc0fbbfc4560a5c1a0f043b68696",
-      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
-      "modified": 1616020312881,
-      "created": 1615999706136,
-      "url": "{{ _.base_url }}",
-      "name": "Add Product",
-      "description": "",
-      "method": "POST",
-      "body": {
-        "mimeType": "application/graphql",
-        "text": "{\"query\":\"mutation {\\n  addProduct(product: {\\n    name: \\\"TestProduct3\\\",\\n    price: 10.40,\\n    storeId: \\\"d2bad919-ce57-44ec-baab-077428b9e7bc\\\"\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
-      },
-      "parameters": [],
-      "headers": [
-        {
-          "name": "Content-Type",
-          "value": "application/json",
-          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
-        }
-      ],
-      "authentication": {},
-      "metaSortKey": -1615999706136,
-      "isPrivate": false,
-      "settingStoreCookies": true,
-      "settingSendCookies": true,
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingFollowRedirects": "global",
-      "_type": "request"
-    },
-    {
-      "_id": "fld_30d48f953d114153b44bdb5f68c224bb",
-      "parentId": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
-      "modified": 1615996785717,
-      "created": 1615996785717,
-      "name": "Product",
-      "description": "",
-      "environment": {},
-      "environmentPropertyOrder": null,
-      "metaSortKey": -1615996785717,
-      "_type": "request_group"
-    },
-    {
-      "_id": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
-      "parentId": null,
-      "modified": 1615774163714,
-      "created": 1615774163714,
-      "name": "TEST-Marketplace",
-      "description": "",
-      "scope": "designer",
-      "_type": "workspace"
-    },
-    {
-      "_id": "req_94079158dd734a52bf6d519a72454c6d",
-      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
-      "modified": 1616020710776,
-      "created": 1616002918752,
-      "url": "{{ _.base_url }}",
-      "name": "List Products",
-      "description": "",
-      "method": "POST",
-      "body": {
-        "mimeType": "application/graphql",
-        "text": "{\"query\":\"{\\n  products {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\"}"
-      },
-      "parameters": [],
-      "headers": [
-        {
-          "name": "Content-Type",
-          "value": "application/json",
-          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
-        }
-      ],
-      "authentication": {},
-      "metaSortKey": -1615974308126.5,
-      "isPrivate": false,
-      "settingStoreCookies": true,
-      "settingSendCookies": true,
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingFollowRedirects": "global",
-      "_type": "request"
-    },
-    {
-      "_id": "req_f585d078d6c8400dbc5cd2090cdbc4dd",
-      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
-      "modified": 1616020056410,
-      "created": 1616004735142,
-      "url": "{{ _.base_url }}",
-      "name": "Get a Product",
-      "description": "",
-      "method": "POST",
-      "body": {
-        "mimeType": "application/graphql",
-        "text": "{\"query\":\"{\\n  product(id: \\\"f57c2f63-5cbe-4dab-af9e-526263b775ac\\\") {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\"}"
-      },
-      "parameters": [],
-      "headers": [
-        {
-          "name": "Content-Type",
-          "value": "application/json",
-          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
-        }
-      ],
-      "authentication": {},
-      "metaSortKey": -1615961609121.75,
-      "isPrivate": false,
-      "settingStoreCookies": true,
-      "settingSendCookies": true,
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingFollowRedirects": "global",
-      "_type": "request"
-    },
-    {
-      "_id": "req_94f096dc42154f18a17690721a4e7a40",
-      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
-      "modified": 1616020473482,
-      "created": 1616020068078,
-      "url": "{{ _.base_url }}",
-      "name": "Update Product",
-      "description": "",
-      "method": "POST",
-      "body": {
-        "mimeType": "application/graphql",
-        "text": "{\"query\":\"mutation {\\n  updateProduct(product: {\\n    id: \\\"f8a03c98-28ba-4373-aa5f-659fe05c2c39\\\",\\n    name: \\\"TestProduct666\\\",\\n    price: 666.66,\\n    storeId: \\\"d2bad919-ce57-44ec-baab-077428b9e7bc\\\"\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
-      },
-      "parameters": [],
-      "headers": [
-        {
-          "name": "Content-Type",
-          "value": "application/json",
-          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
-        }
-      ],
-      "authentication": {},
-      "metaSortKey": -1615958434370.5625,
-      "isPrivate": false,
-      "settingStoreCookies": true,
-      "settingSendCookies": true,
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingFollowRedirects": "global",
-      "_type": "request"
-    },
-    {
-      "_id": "req_a00fd114834946c6bf0e9eb2bd145b96",
-      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
-      "modified": 1616020739445,
-      "created": 1616020467663,
-      "url": "{{ _.base_url }}",
-      "name": "Delete a Product",
-      "description": "",
-      "method": "POST",
-      "body": {
-        "mimeType": "application/graphql",
-        "text": "{\"query\":\"mutation {\\n  deleteProduct(id: \\\"5c287733-345b-4786-b730-9ed4bda68388\\\")\\n}\\n\"}"
-      },
-      "parameters": [],
-      "headers": [
-        {
-          "name": "Content-Type",
-          "value": "application/json",
-          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
-        }
-      ],
-      "authentication": {},
-      "metaSortKey": -1615955259619.375,
-      "isPrivate": false,
-      "settingStoreCookies": true,
-      "settingSendCookies": true,
-      "settingDisableRenderRequestBody": false,
-      "settingEncodeUrl": true,
-      "settingRebuildPath": true,
-      "settingFollowRedirects": "global",
-      "_type": "request"
-    },
-    {
       "_id": "req_9811201f2ad04524a191efcd082b5b04",
       "parentId": "fld_a93a1bed38694a2986e64491f49dc1fb",
-      "modified": 1616017915021,
+      "modified": 1616373627665,
       "created": 1615774206249,
       "url": "{{ _.base_url }}",
       "name": "Add Store",
@@ -197,7 +15,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/graphql",
-        "text": "{\"query\":\"mutation {\\n  addStore(store: {name: \\\"TestingStore88\\\", feePercentage: 95}) {\\n    id\\n    name\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+        "text": "{\"query\":\"mutation {\\n  addStore(store: {name: \\\"Test Store 0\\\", feePercentage: 75}) {\\n    id\\n    name\\n    feePercentage\\n    products {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
       },
       "parameters": [],
       "headers": [
@@ -221,19 +39,29 @@
     {
       "_id": "fld_a93a1bed38694a2986e64491f49dc1fb",
       "parentId": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
-      "modified": 1615948915924,
+      "modified": 1616095530753,
       "created": 1615948915924,
       "name": "Store",
       "description": "",
       "environment": {},
       "environmentPropertyOrder": null,
-      "metaSortKey": -1615948915924,
+      "metaSortKey": -1616026937511,
       "_type": "request_group"
+    },
+    {
+      "_id": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
+      "parentId": null,
+      "modified": 1615774163714,
+      "created": 1615774163714,
+      "name": "TEST-Marketplace",
+      "description": "",
+      "scope": "designer",
+      "_type": "workspace"
     },
     {
       "_id": "req_c8995f63076e468e8c1dfcd977d4cd87",
       "parentId": "fld_a93a1bed38694a2986e64491f49dc1fb",
-      "modified": 1616000875357,
+      "modified": 1616373630220,
       "created": 1615996898812,
       "url": "{{ _.base_url }}",
       "name": "Get a Store",
@@ -241,7 +69,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/graphql",
-        "text": "{\"query\":\"{\\n  store(id: \\\"d2bad919-ce57-44ec-baab-077428b9e7bc\\\") {\\n    id\\n    name\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+        "text": "{\"query\":\"{\\n  store(id: \\\"53a6f2b8-b5d1-4285-8bb2-fc53fe91328c\\\") {\\n    id\\n    name\\n    feePercentage\\n    products {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
       },
       "parameters": [],
       "headers": [
@@ -265,7 +93,7 @@
     {
       "_id": "req_8b74c04e3354446296df42d28edc3cea",
       "parentId": "fld_a93a1bed38694a2986e64491f49dc1fb",
-      "modified": 1616020257650,
+      "modified": 1616375478343,
       "created": 1615949685292,
       "url": "{{ _.base_url }}",
       "name": "List Stores",
@@ -273,7 +101,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/graphql",
-        "text": "{\"query\":\"{\\n  stores {\\n    id\\n    name\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+        "text": "{\"query\":\"{\\n  stores {\\n    id\\n    name\\n    feePercentage\\n    products {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
       },
       "parameters": [],
       "headers": [
@@ -297,7 +125,7 @@
     {
       "_id": "req_0a105eddd7f74e9384ffe3bacd58e82d",
       "parentId": "fld_a93a1bed38694a2986e64491f49dc1fb",
-      "modified": 1615997462244,
+      "modified": 1616373659959,
       "created": 1615948910067,
       "url": "{{ _.base_url }}",
       "name": "Update Store",
@@ -305,7 +133,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/graphql",
-        "text": "{\"query\":\"mutation {\\n  updateStore(store: {\\n    id: \\\"d2bad919-ce57-44ec-baab-077428b9e7bc\\\", name: \\\"TestingStoreNEW\\\", feePercentage: 10\\n  }) {\\n    id\\n    name\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+        "text": "{\"query\":\"mutation {\\n  updateStore(store: {id: \\\"53a6f2b8-b5d1-4285-8bb2-fc53fe91328c\\\", name: \\\"Test Store 0+\\\", feePercentage: 80}) {\\n    id\\n    name\\n    feePercentage\\n    products {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
       },
       "parameters": [],
       "headers": [
@@ -317,6 +145,874 @@
       ],
       "authentication": {},
       "metaSortKey": -1615855752322,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_4d0bfc0fbbfc4560a5c1a0f043b68696",
+      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "modified": 1616374035793,
+      "created": 1615999706136,
+      "url": "{{ _.base_url }}",
+      "name": "Add Product",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  addProduct(product: {name: \\\"Test Product 0\\\", price: 27.90, storeId: \\\"53a6f2b8-b5d1-4285-8bb2-fc53fe91328c\\\"}) {\\n    id\\n    name\\n    price\\n    store {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615999706136,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "parentId": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
+      "modified": 1616095534078,
+      "created": 1615996785717,
+      "name": "Product",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1616026937486,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_94079158dd734a52bf6d519a72454c6d",
+      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "modified": 1616375494221,
+      "created": 1616002918752,
+      "url": "{{ _.base_url }}",
+      "name": "List Products",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"{\\n  products {\\n    id\\n    name\\n    price\\n    store {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615974308126.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f585d078d6c8400dbc5cd2090cdbc4dd",
+      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "modified": 1616374796120,
+      "created": 1616004735142,
+      "url": "{{ _.base_url }}",
+      "name": "Get a Product",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"{\\n  product(id: \\\"6f7b8fff-b71d-4e81-a308-fd8fcd5df5f3\\\") {\\n    id\\n    name\\n    price\\n    store {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615961609121.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_94f096dc42154f18a17690721a4e7a40",
+      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "modified": 1616374055984,
+      "created": 1616020068078,
+      "url": "{{ _.base_url }}",
+      "name": "Update Product",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  updateProduct(product: {\\n    id: \\\"cc27ef6e-b788-4be3-b264-d8e82ba1a6b3\\\",\\n    name: \\\"Test Product 2+\\\",\\n    price: 29.90,\\n    storeId: \\\"824d4264-b934-4df6-a1c4-69404dff80d6\\\"\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615958434370.5625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_a00fd114834946c6bf0e9eb2bd145b96",
+      "parentId": "fld_30d48f953d114153b44bdb5f68c224bb",
+      "modified": 1616374050136,
+      "created": 1616020467663,
+      "url": "{{ _.base_url }}",
+      "name": "Delete a Product",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  deleteProduct(id: \\\"cc27ef6e-b788-4be3-b264-d8e82ba1a6b3\\\")\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615955259619.375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_da9fbd5c736c4b60b7889e6385d33a3b",
+      "parentId": "fld_16c6356f402c47a297dde2e9b0ae5b3d",
+      "modified": 1616374589779,
+      "created": 1616026983618,
+      "url": "{{ _.base_url }}",
+      "name": "Add Purchase",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  addPurchase(productId: \\\"7e56bc77-74f6-4b76-9034-15d2adebe806\\\") {\\n    id\\n    product {\\n      id\\n      name\\n      store {\\n        name\\n      }\\n    }\\n    total\\n    marketplacePercentage\\n    marketplaceValue\\n    storePercentage\\n    storeValue\\n    paymentPlatformPercentage\\n    paymentPlatformValue\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_fd4329b814b54c34814ddfbe28da23cf"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1616026983674,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_16c6356f402c47a297dde2e9b0ae5b3d",
+      "parentId": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
+      "modified": 1616095524006,
+      "created": 1616026937161,
+      "name": "Purchase",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1616026937461,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_39e048588c2f4feeb7bd8c78e148e64e",
+      "parentId": "fld_16c6356f402c47a297dde2e9b0ae5b3d",
+      "modified": 1616374781959,
+      "created": 1616027526407,
+      "url": "{{ _.base_url }}",
+      "name": "Retrieve Purchase",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\" {\\n  purchase(id: \\\"44fa0ac2-00a9-4238-88a1-0146b1eb9a88\\\") {\\n    id\\n    product {\\n      name\\n      store {\\n        name\\n      }\\n    }\\n    total\\n    marketplacePercentage\\n    marketplaceValue\\n    storePercentage\\n    storeValue\\n    paymentPlatformPercentage\\n    paymentPlatformValue\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_fd4329b814b54c34814ddfbe28da23cf"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1616013344905,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_45041654d72d4e8d8797b69681c40728",
+      "parentId": "fld_16c6356f402c47a297dde2e9b0ae5b3d",
+      "modified": 1616375530445,
+      "created": 1616027599568,
+      "url": "{{ _.base_url }}",
+      "name": "List Purchases",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\" {\\n  purchases {\\n    id\\n    product {\\n      name\\n      store {\\n        name\\n      }\\n    }\\n    total\\n    marketplacePercentage\\n    marketplaceValue\\n    storePercentage\\n    storeValue\\n    paymentPlatformPercentage\\n    paymentPlatformValue\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_fd4329b814b54c34814ddfbe28da23cf"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1616006525520.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_90047b5844f14b61b6151f3a35fcd397",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616375499167,
+      "created": 1616095187699,
+      "url": "{{ _.base_url }}",
+      "name": "Add Store 1",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  addStore(store: {name: \\\"Sushi House\\\", feePercentage: 95}) {\\n    id\\n    name\\n    products {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_40d30d717cc5410387ff484dc5f3e742"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615948910092,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "parentId": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
+      "modified": 1616095501265,
+      "created": 1616095163083,
+      "name": "Populate DB",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1616026937311,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_ebe4bbcc9b94497ab6f5656273ab81ea",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374693062,
+      "created": 1616095196892,
+      "url": "{{ _.base_url }}",
+      "name": "Add Store 2",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  addStore(store: {name: \\\"Best Buy\\\", feePercentage: 80}) {\\n    id\\n    name\\n    products {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_40d30d717cc5410387ff484dc5f3e742"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615948910079.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_ce010154650542769644956cc0d45ba3",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374696101,
+      "created": 1616095201232,
+      "url": "{{ _.base_url }}",
+      "name": "Add Store 3",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation {\\n  addStore(store: {name: \\\"Udemy\\\", feePercentage: 75}) {\\n    id\\n    name\\n    products {\\n      name\\n    }\\n    purchases {\\n      id\\n    }\\n    feePercentage\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\"}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_40d30d717cc5410387ff484dc5f3e742"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615948910073.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_d0cdb79569584af5b58231e40414640b",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616375502007,
+      "created": 1616095208203,
+      "url": "{{ _.base_url }}",
+      "name": "Add Product 1 to Store 1",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($storeId: String) {\\n  addProduct(product: {\\n    name: \\\"Sashimi\\\",\\n    price: 29.90,\\n    storeId: $storeId\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"storeId\":\"{% response 'body', 'req_90047b5844f14b61b6151f3a35fcd397', 'b64::JC5kYXRhLmFkZFN0b3JlLmlk::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615948910023.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e9509deb236446c08568a6a06e250a87",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374702021,
+      "created": 1616095232248,
+      "url": "{{ _.base_url }}",
+      "name": "Add Product 2 to Store 1",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($storeId: String) {\\n  addProduct(product: {\\n    name: \\\"Nigiri\\\",\\n    price: 9.90,\\n    storeId: $storeId\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"storeId\":\"{% response 'body', 'req_90047b5844f14b61b6151f3a35fcd397', 'b64::JC5kYXRhLmFkZFN0b3JlLmlk::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615925620621.375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_ffea9e608ce54697a4d4fc8e3542a64f",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374703506,
+      "created": 1616095239376,
+      "url": "{{ _.base_url }}",
+      "name": "Add Product 3 to Store 1",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($storeId: String) {\\n  addProduct(product: {\\n    name: \\\"Sushi Boat\\\",\\n    price: 69.90,\\n    storeId: $storeId\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"storeId\":\"{% response 'body', 'req_90047b5844f14b61b6151f3a35fcd397', 'b64::JC5kYXRhLmFkZFN0b3JlLmlk::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615913975920.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_7f077016de04417097e6c1da216f738d",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374704937,
+      "created": 1616095252255,
+      "url": "{{ _.base_url }}",
+      "name": "Add Product 1 to Store 2",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($storeId: String) {\\n  addProduct(product: {\\n    name: \\\"Drone\\\",\\n    price: 3500.00,\\n    storeId: $storeId\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"storeId\":\"{% response 'body', 'req_ebe4bbcc9b94497ab6f5656273ab81ea', 'b64::JC5kYXRhLmFkZFN0b3JlLmlk::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615913975870.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_118d02f655244868a794b682449a9807",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374708687,
+      "created": 1616095261237,
+      "url": "{{ _.base_url }}",
+      "name": "Add Product 2 to Store 2",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($storeId: String) {\\n  addProduct(product: {\\n    name: \\\"Smartphone\\\",\\n    price: 2000.00,\\n    storeId: $storeId\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"storeId\":\"{% response 'body', 'req_ebe4bbcc9b94497ab6f5656273ab81ea', 'b64::JC5kYXRhLmFkZFN0b3JlLmlk::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615913975820.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_009b8975b91c4d1997a7ef90f17d85a8",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374710737,
+      "created": 1616095272114,
+      "url": "{{ _.base_url }}",
+      "name": "Add Product 3 to Store 2",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($storeId: String) {\\n  addProduct(product: {\\n    name: \\\"Macbook Pro\\\",\\n    price: 40000.00,\\n    storeId: $storeId\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"storeId\":\"{% response 'body', 'req_ebe4bbcc9b94497ab6f5656273ab81ea', 'b64::JC5kYXRhLmFkZFN0b3JlLmlk::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615913975770.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c4442d437183469693d4935892757a47",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374712538,
+      "created": 1616095282985,
+      "url": "{{ _.base_url }}",
+      "name": "Add Product 1 to Store 3",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($storeId: String) {\\n  addProduct(product: {\\n    name: \\\"Javascript\\\",\\n    price: 27.90,\\n    storeId: $storeId\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"storeId\":\"{% response 'body', 'req_ce010154650542769644956cc0d45ba3', 'b64::JC5kYXRhLmFkZFN0b3JlLmlk::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615913975720.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_5dc55518c4644393861e244deef144ce",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374715638,
+      "created": 1616095290054,
+      "url": "{{ _.base_url }}",
+      "name": "Add Product 2 to Store 3",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($storeId: String) {\\n  addProduct(product: {\\n    name: \\\"Node\\\",\\n    price: 27.90,\\n    storeId: $storeId\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"storeId\":\"{% response 'body', 'req_ce010154650542769644956cc0d45ba3', 'b64::JC5kYXRhLmFkZFN0b3JlLmlk::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615913975670.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_dd69318493b54ccba8bdc0f4538e8aa9",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374718987,
+      "created": 1616095306343,
+      "url": "{{ _.base_url }}",
+      "name": "Add Product 3 to Store 3",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($storeId: String) {\\n  addProduct(product: {\\n    name: \\\"GraphQL\\\",\\n    price: 27.90,\\n    storeId: $storeId\\n  }) {\\n    id\\n    name\\n    price\\n    store {\\n      id\\n      name\\n      feePercentage\\n    }\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"storeId\":\"{% response 'body', 'req_ce010154650542769644956cc0d45ba3', 'b64::JC5kYXRhLmFkZFN0b3JlLmlk::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bbff8fb3c01b4dadb1c19b698ffb0e77"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615913975620.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c471c17c436b45479644df70950ba6b6",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616375465643,
+      "created": 1616095406698,
+      "url": "{{ _.base_url }}",
+      "name": "Add Purchase 1 to Store 1",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($productId: String!) {\\n  addPurchase(productId: $productId) {\\n    id\\n    product {\\n      id\\n      name\\n      price\\n      store {\\n        name\\n      }\\n    }\\n    total\\n    marketplacePercentage\\n    marketplaceValue\\n    storePercentage\\n    storeValue\\n    paymentPlatformPercentage\\n    paymentPlatformValue\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"productId\":\"{% response 'body', 'req_d0cdb79569584af5b58231e40414640b', 'b64::JC5kYXRhLmFkZFByb2R1Y3QuaWQ=::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_fd4329b814b54c34814ddfbe28da23cf"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615913975570.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_72a233756ae54e959fccd6560b919d42",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616375523627,
+      "created": 1616095422847,
+      "url": "{{ _.base_url }}",
+      "name": "Add Purchase 2 to Store 1",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($productId: String!) {\\n  addPurchase(productId: $productId) {\\n    id\\n    product {\\n      id\\n      name\\n      price\\n      store {\\n        name\\n      }\\n    }\\n    total\\n    marketplacePercentage\\n    marketplaceValue\\n    storePercentage\\n    storeValue\\n    paymentPlatformPercentage\\n    paymentPlatformValue\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\",\"variables\":{\"productId\":\"{% response 'body', 'req_e9509deb236446c08568a6a06e250a87', 'b64::JC5kYXRhLmFkZFByb2R1Y3QuaWQ=::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_fd4329b814b54c34814ddfbe28da23cf"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615908153394.9688,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_9c79feede21144cbb6f6f6a162e8ddcf",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616374725741,
+      "created": 1616095430094,
+      "url": "{{ _.base_url }}",
+      "name": "Add Purchase 1 to Store 2",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($productId: String!) {\\n  addPurchase(productId: $productId) {\\n    id\\n    product {\\n      id\\n      name\\n      price\\n      store {\\n        name\\n      }\\n    }\\n    total\\n    marketplacePercentage\\n    marketplaceValue\\n    storePercentage\\n    storeValue\\n    paymentPlatformPercentage\\n    paymentPlatformValue\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\",\"variables\":{\"productId\":\"{% response 'body', 'req_7f077016de04417097e6c1da216f738d', 'b64::JC5kYXRhLmFkZFByb2R1Y3QuaWQ=::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_fd4329b814b54c34814ddfbe28da23cf"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615908153344.9688,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f6561c0c2e1f429b802c953fcdd135e8",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616375512500,
+      "created": 1616095436497,
+      "url": "{{ _.base_url }}",
+      "name": "Add Purchase 2 to Store 2",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($productId: String!) {\\n  addPurchase(productId: $productId) {\\n    id\\n    product {\\n      id\\n      name\\n      price\\n      store {\\n        name\\n      }\\n    }\\n    total\\n    marketplacePercentage\\n    marketplaceValue\\n    storePercentage\\n    storeValue\\n    paymentPlatformPercentage\\n    paymentPlatformValue\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\",\"variables\":{\"productId\":\"{% response 'body', 'req_118d02f655244868a794b682449a9807', 'b64::JC5kYXRhLmFkZFByb2R1Y3QuaWQ=::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_fd4329b814b54c34814ddfbe28da23cf"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615908153294.9688,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_594aebf3a4014933ae0b01335649d403",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616375510203,
+      "created": 1616095459064,
+      "url": "{{ _.base_url }}",
+      "name": "Add Purchase 2 to Store 3",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($productId: String!) {\\n  addPurchase(productId: $productId) {\\n    id\\n    product {\\n      id\\n      name\\n      price\\n      store {\\n        name\\n      }\\n    }\\n    total\\n    marketplacePercentage\\n    marketplaceValue\\n    storePercentage\\n    storeValue\\n    paymentPlatformPercentage\\n    paymentPlatformValue\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"productId\":\"{% response 'body', 'req_c4442d437183469693d4935892757a47', 'b64::JC5kYXRhLmFkZFByb2R1Y3QuaWQ=::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_fd4329b814b54c34814ddfbe28da23cf"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615908153269.9688,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_32fc49b2b0bb4588b76617285cde19d8",
+      "parentId": "fld_6e693d96e373432b9e00e1487bfd4056",
+      "modified": 1616375507728,
+      "created": 1616095450214,
+      "url": "{{ _.base_url }}",
+      "name": "Add Purchase 1 to Store 3",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/graphql",
+        "text": "{\"query\":\"mutation ($productId: String!) {\\n  addPurchase(productId: $productId) {\\n    id\\n    product {\\n      id\\n      name\\n      price\\n      store {\\n        name\\n      }\\n    }\\n    total\\n    marketplacePercentage\\n    marketplaceValue\\n    storePercentage\\n    storeValue\\n    paymentPlatformPercentage\\n    paymentPlatformValue\\n    createdAt\\n    updatedAt\\n    __typename\\n  }\\n}\\n\",\"variables\":{\"productId\":\"{% response 'body', 'req_5dc55518c4644393861e244deef144ce', 'b64::JC5kYXRhLmFkZFByb2R1Y3QuaWQ=::46b', 'never', 60 %}\"}}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_fd4329b814b54c34814ddfbe28da23cf"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1615908153244.9688,
       "isPrivate": false,
       "settingStoreCookies": true,
       "settingSendCookies": true,
@@ -359,11 +1055,19 @@
       "_type": "api_spec"
     },
     {
-      "_id": "uts_fb4c2daeb4994f9b8a3334e94821e02d",
+      "_id": "uts_5fd5e119b0474391a6080fce566daa3e",
       "parentId": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
-      "modified": 1615774445359,
-      "created": 1615774445359,
-      "name": "Temp",
+      "modified": 1616375025056,
+      "created": 1616375025056,
+      "name": "Get and List",
+      "_type": "unit_test_suite"
+    },
+    {
+      "_id": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "parentId": "wrk_3b6fbfb6f5a3418186ad0e80af63112e",
+      "modified": 1616375114940,
+      "created": 1616375114940,
+      "name": "Populate DB Flow",
       "_type": "unit_test_suite"
     },
     {
@@ -405,12 +1109,242 @@
       "_type": "environment"
     },
     {
-      "_id": "ut_1aa397136f3c4a03a11836b0a9fb4056",
-      "parentId": "uts_fb4c2daeb4994f9b8a3334e94821e02d",
-      "modified": 1615774451112,
-      "created": 1615774449054,
-      "requestId": "req_9811201f2ad04524a191efcd082b5b04",
-      "name": "Returns 200",
+      "_id": "ut_93c8b3069d294615bdb1fe9b948e6e86",
+      "parentId": "uts_5fd5e119b0474391a6080fce566daa3e",
+      "modified": 1616375045139,
+      "created": 1616375039154,
+      "requestId": "req_c8995f63076e468e8c1dfcd977d4cd87",
+      "name": "Get Store",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_85aebdd4c3fa46789689321e09c7ce34",
+      "parentId": "uts_5fd5e119b0474391a6080fce566daa3e",
+      "modified": 1616375056670,
+      "created": 1616375053264,
+      "requestId": "req_8b74c04e3354446296df42d28edc3cea",
+      "name": "List Stores",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_dc174bcc2b484dcab4cda23ad2da0d81",
+      "parentId": "uts_5fd5e119b0474391a6080fce566daa3e",
+      "modified": 1616375068126,
+      "created": 1616375063811,
+      "requestId": "req_f585d078d6c8400dbc5cd2090cdbc4dd",
+      "name": "Get Product",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_4137e9ea405d4d1ea15a4451737a4761",
+      "parentId": "uts_5fd5e119b0474391a6080fce566daa3e",
+      "modified": 1616375077132,
+      "created": 1616375071877,
+      "requestId": "req_94079158dd734a52bf6d519a72454c6d",
+      "name": "List Products",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_7069ae98823b4153bfaf17cf32c761fe",
+      "parentId": "uts_5fd5e119b0474391a6080fce566daa3e",
+      "modified": 1616375094644,
+      "created": 1616375085106,
+      "requestId": "req_39e048588c2f4feeb7bd8c78e148e64e",
+      "name": "Get Purchase",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_2957db8ff4724c06a38f2df0db85c6b2",
+      "parentId": "uts_5fd5e119b0474391a6080fce566daa3e",
+      "modified": 1616375107049,
+      "created": 1616375102781,
+      "requestId": "req_45041654d72d4e8d8797b69681c40728",
+      "name": "List Purchase",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_67576f42ef894b6eaacb6af1e9a0d364",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375342600,
+      "created": 1616375122646,
+      "requestId": "req_90047b5844f14b61b6151f3a35fcd397",
+      "name": "Add Store 1",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_57504b54b6294f4c92ae9ce616fd1824",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375344863,
+      "created": 1616375127625,
+      "requestId": "req_ebe4bbcc9b94497ab6f5656273ab81ea",
+      "name": "Add Store 2",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_7acbae3029524e5aae924b216544c2c5",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375348844,
+      "created": 1616375131623,
+      "requestId": "req_ce010154650542769644956cc0d45ba3",
+      "name": "Add Store 3",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_7ce96df429ec4bfdb7de24198d51164f",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375360070,
+      "created": 1616375142509,
+      "requestId": "req_d0cdb79569584af5b58231e40414640b",
+      "name": "Add Product 1 to Store 1",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_f1c847159bfa4fa59f799ed5b354efa3",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375362866,
+      "created": 1616375147434,
+      "requestId": "req_e9509deb236446c08568a6a06e250a87",
+      "name": "Add Product 2 to Store 1",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_ed5d5b53e53b464f81e0eed0b1180975",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375365307,
+      "created": 1616375153318,
+      "requestId": "req_ffea9e608ce54697a4d4fc8e3542a64f",
+      "name": "Add Product 3 to Store 1",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_37769ad31df3453ca66b99a406e19c24",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375367628,
+      "created": 1616375160469,
+      "requestId": "req_7f077016de04417097e6c1da216f738d",
+      "name": "Add Product 1 to Store 2",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_1ed05f0191d3471b812e94669cf28ae9",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375370729,
+      "created": 1616375169452,
+      "requestId": "req_118d02f655244868a794b682449a9807",
+      "name": "Add Product 2 to Store 2",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_ff4946c7f2db49a8892a16b1332e2f54",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375374189,
+      "created": 1616375174886,
+      "requestId": "req_009b8975b91c4d1997a7ef90f17d85a8",
+      "name": "Add Product 3 to Store 2",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_201cd6c63b8a4c95b0514329a73b554e",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375378475,
+      "created": 1616375181268,
+      "requestId": "req_c4442d437183469693d4935892757a47",
+      "name": "Add Product 1 to Store 3",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_a96216de613a46eb89dc443574a51b79",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375394321,
+      "created": 1616375186865,
+      "requestId": "req_5dc55518c4644393861e244deef144ce",
+      "name": "Add Product 2 to Store 3",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_1de951dd83a84f2f9ab1c530ff94754d",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375390348,
+      "created": 1616375190662,
+      "requestId": "req_dd69318493b54ccba8bdc0f4538e8aa9",
+      "name": "Add Product 1 to Store 3",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_c046e0c8d0a646469b38d83637d8385d",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375401751,
+      "created": 1616375229439,
+      "requestId": "req_c471c17c436b45479644df70950ba6b6",
+      "name": "Add Purchase 1 to Store 1",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_4aa3aeba996346cfacec524363d5719c",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375405121,
+      "created": 1616375250332,
+      "requestId": "req_72a233756ae54e959fccd6560b919d42",
+      "name": "Add Purchase 2 to Store 1",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_425fa57042ea4a39ab38dfcbe639c894",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375408908,
+      "created": 1616375318677,
+      "requestId": "req_9c79feede21144cbb6f6f6a162e8ddcf",
+      "name": "Add Purchase 1 to Store 2",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_4d44d45745ef4b498e19783aafbe0e12",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375411880,
+      "created": 1616375323995,
+      "requestId": "req_f6561c0c2e1f429b802c953fcdd135e8",
+      "name": "Add Purchase 2 to Store 2",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_36f72b41056b42c79749090b9d4e74f2",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375429522,
+      "created": 1616375328738,
+      "requestId": "req_32fc49b2b0bb4588b76617285cde19d8",
+      "name": "Add Purchase 1 to Store 3",
+      "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
+      "_type": "unit_test"
+    },
+    {
+      "_id": "ut_795d409f0a374896a066a3d8d16f1ea8",
+      "parentId": "uts_ec4b2eee2e084cbeba003741ce9e7d58",
+      "modified": 1616375427113,
+      "created": 1616375334302,
+      "requestId": "req_594aebf3a4014933ae0b01335649d403",
+      "name": "Add Purchase 2 to Store 3",
       "code": "const response1 = await insomnia.send();\nexpect(response1.status).to.equal(200);",
       "_type": "unit_test"
     }

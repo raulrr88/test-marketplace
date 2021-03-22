@@ -11,7 +11,7 @@ class GetProductPurchasesService {
 
   public async execute(id: string): Promise<Purchase[]> {
     const purchases = await this.productsRepository.getProductPurchases(id);
-    if (purchases && purchases.length > 0) return purchases;
+    if (purchases) return purchases;
     throw new Error('Purchases were not found!');
   }
 }
