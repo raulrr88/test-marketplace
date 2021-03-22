@@ -37,6 +37,7 @@ Click on Insomnia button to import all requests and tests to run in your machine
  - CD: Heroku Pipeline
 <br>
 <br>
+
  ## Architecture and Design Keys:
  - Clean Architecture (Loose coupled and High Cohesion)
  - SOLID Principles
