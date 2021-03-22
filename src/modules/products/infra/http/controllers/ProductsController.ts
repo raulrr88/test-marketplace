@@ -49,7 +49,7 @@ class ProductsController {
     return listStoreProducts.execute(storeId);
   }
 
-  public update(data: ProductInput): Promise<Product> {
+  public update(data: Omit<ProductInput, 'storeId'>): Promise<Product> {
     const updateProduct = container.resolve(UpdateProductService);
     return updateProduct.execute(data);
   }

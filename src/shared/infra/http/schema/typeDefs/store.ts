@@ -18,7 +18,7 @@ const store = gql`
   }
 
   input StoreUpdateInput {
-    id: String
+    id: String!
     name: String
     feePercentage: Int
   }

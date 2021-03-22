@@ -8,7 +8,6 @@ interface ICreateProductInput {
   id: string;
   name: string;
   price: number;
-  storeId: string;
 }
 
 @singleton()
@@ -24,16 +23,16 @@ class UpdateProductService {
     id,
     name,
     price,
-    storeId,
   }: ICreateProductInput): Promise<Product> {
     const product = await this.productsRepository.findById(id);
     if (!product) throw new UserInputError('Product not found!');
-    const store = await this.storesRespository.findById(storeId);
+    const store = await this.productsRepository.getProductStore(id);
     if (!store) throw new UserInputError('Store not found!');
-    const affected = this.productsRepository.update({
+
+    const affected = await this.productsRepository.update({
       id,
-      name,
-      price,
+      name: name ?? product.name,
+      price: price ?? product.price,
       store,
     });
     const newProduct = await this.productsRepository.findById(id);

@@ -26,8 +26,8 @@ class UpdateStoreService {
       );
     const affected = await this.storesRepository.update({
       id,
-      name,
-      feePercentage,
+      name: name ?? store.name,
+      feePercentage: feePercentage ?? store.feePercentage,
     });
     const newStore = await this.storesRepository.findById(id);
     if (affected && newStore) return newStore;

@@ -13,9 +13,15 @@ const product = gql`
 
   input ProductInput {
     id: String
+    name: String!
+    price: Float!
+    storeId: String!
+  }
+
+  input ProductUpdateInput {
+    id: String!
     name: String
     price: Float
-    storeId: String
   }
 
   extend type Query {
@@ -25,7 +31,7 @@ const product = gql`
 
   extend type Mutation {
     addProduct(product: ProductInput): Product
-    updateProduct(product: ProductInput): Product
+    updateProduct(product: ProductUpdateInput): Product
     deleteProduct(id: String): String
   }
 `;
