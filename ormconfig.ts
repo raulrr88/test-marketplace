@@ -6,4 +6,5 @@ export default {
   cli: {
     migrationsDir: `./src/shared/infra/typeorm/migrations/`,
   },
+  ssl: true,
 };
