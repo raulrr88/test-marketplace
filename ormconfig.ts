@@ -7,4 +7,7 @@ export default {
     migrationsDir: `./src/shared/infra/typeorm/migrations/`,
   },
   ssl: true,
+  extra: {
+    ssl: { rejectUnauthorized: false },
+  },
 };
