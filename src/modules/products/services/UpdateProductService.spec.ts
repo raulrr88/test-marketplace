@@ -50,11 +50,6 @@ describe('UpdateProduct', () => {
   });
 
   it('should not update a product without a valid product ID', async () => {
-    const store = await createStore.execute({
-      name: 'Test Store 0',
-      feePercentage: 90,
-    });
-
     expect(
       updateProduct.execute({
         id: '123456',
