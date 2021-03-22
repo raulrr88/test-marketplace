@@ -9,8 +9,7 @@
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --fix",
     "build": "tsc",
-    "heroku-postbuild": "npx typeorm migration:run",
-    "prod:server": "node dist/shared/infra/http/server.js",
+    "prod:server": "ts-node src/shared/infra/http/server.ts",
     "test": "jest"
   },
   "dependencies": {
