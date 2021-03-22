@@ -10,6 +10,7 @@
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --fix",
     "build": "tsc",
     "prod:server": "ts-node src/shared/infra/http/server.ts",
+    "heroku-postbuild": "ts-node ./node_modules/typeorm/cli.js migration:run",
     "test": "jest"
   },
   "dependencies": {
