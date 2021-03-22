@@ -1,4 +1,4 @@
-const ormconfig = {
+export default {
   type: 'postgres',
   url: process.env.DATABASE_URL,
   entities: [`./src/modules/**/infra/typeorm/entities/*.ts`],
@@ -7,4 +7,3 @@ const ormconfig = {
     migrationsDir: `./src/shared/infra/typeorm/migrations/`,
   },
 };
-export = ormconfig;

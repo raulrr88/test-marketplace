@@ -1,4 +1,4 @@
-import { UserInputError } from 'apollo-server-errors';
+import { UserInputError } from 'apollo-server';
 import FakeProductsRepository from '../../products/infra/typeorm/repositories/fakes/FakeProductsRepository';
 import CreateProductService from '../../products/services/CreateProductService';
 import FakeStoresRepository from '../../stores/repositories/fakes/FakeStoresRepository';
