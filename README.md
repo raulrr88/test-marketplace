@@ -5,9 +5,9 @@
 ## Version
 [![Version](https://badge.fury.io/gh/tterb%2FHyde.svg)](https://badge.fury.io/gh/tterb%2FHyde)
 
-[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=TEST-Marketplace&uri=https://github.com/raulrr88/test-marketplace/blob/master/Insomnia_test_marketplace.json?token=AB6AVBVOVTL2RH5TCT6QA5DAJ3FLS)
+https://app-test-marketplace.herokuapp.com ( Test Version Running on Heroku )
 
-<!-- [![Heroku CI Status](https://app-test-marketplace.herokuapp.com/last.svg)](https://dashboard.heroku.com/pipelines/pipe-test-marketplace/tests) -->
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=TEST-Marketplace&uri=https://github.com/raulrr88/test-marketplace/blob/master/Insomnia_test_marketplace.json?token=AB6AVBVOVTL2RH5TCT6QA5DAJ3FLS)
 
 <br>
 Click on Insomnia button to import all requests and tests to run in your machine.

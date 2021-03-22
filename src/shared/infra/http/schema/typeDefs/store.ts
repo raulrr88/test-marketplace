@@ -17,6 +17,12 @@ const store = gql`
     feePercentage: Int = 90
   }
 
+  input StoreUpdateInput {
+    id: String
+    name: String
+    feePercentage: Int
+  }
+
   extend type Query {
     store(id: ID): Store
     stores: [Store]
@@ -24,7 +30,7 @@ const store = gql`
 
   extend type Mutation {
     addStore(store: StoreInput): Store
-    updateStore(store: StoreInput): Store
+    updateStore(store: StoreUpdateInput): Store
   }
 `;
 
